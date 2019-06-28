@@ -15,6 +15,10 @@ export class HomePage implements OnInit{
   //need slider configuration
   sliderConfig = {
 
+    //page cart should display half open
+    spaceBetween : 10,
+    centeredSlides : true,
+    slidesPerView : 1.6
   }
   constructor(
     private cartService : CartService,
@@ -31,7 +35,9 @@ export class HomePage implements OnInit{
     this.cartService.addProduct(product);
   }
   openCart(){
-    this.router.navigate['cart'];
+    console.log("Open cart");
+    //this.router.navigate['cart'];
+    this.router.navigate(['cart',{}])
   }
 
 }
